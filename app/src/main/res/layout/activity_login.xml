@@ -199,6 +199,15 @@
             android:layout_height="match_parent"
             android:drawableRight="@drawable/ic_lock_black_24dp"
             android:hint="رمز عبور " />
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:id="@+id/login_progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline
