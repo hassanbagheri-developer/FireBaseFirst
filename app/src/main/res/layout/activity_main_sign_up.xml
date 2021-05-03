@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    tools:context=".Activiy.MainSignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="210dp"
+        android:layout_height="215dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline35"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline33"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_pin_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_googleaauth"
+        android:layout_width="236dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline25"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline35"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline33"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline24"></com.google.android.gms.common.SignInButton>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="ثبت نام"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline23"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline30"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline20"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline22" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="به راحتی و با چند کلیک ثبت نام کنید."
+        app:layout_constraintBottom_toTopOf="@+id/btn_googleaauth"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline31"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline32"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline23" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="312dp" />
+
+    <Button
+        android:id="@+id/btn_EmailAut"
+        android:layout_width="237dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/circle_nocolor"
+        android:drawableRight="@drawable/ic_email_black_24dp"
+        android:text="ثبت نام با ایمیل "
+        app:layout_constraintBottom_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline26"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline35"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline33"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline25" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="266dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline27"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline37"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline36"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline26"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/social_icon" />
+
+    <TextView
+        android:id="@+id/txt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="قبلا ثبت نام کرده اید؟ ورود "
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline31"
+        app:layout_constraintStart_toStartOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline34"
+        app:layout_constraintTop_toTopOf="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="129dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="251dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="296dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="95dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="72dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="42dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="336dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="325dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="95dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="283dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="359dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="410dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="486dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="511dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/androidx.constraintlayout.widget.androidx.constraintlayout.widget.Guideline22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="224dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

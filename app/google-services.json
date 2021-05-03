@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "643701196923",
+    "firebase_url": "https://fir-first-cb812-default-rtdb.firebaseio.com",
     "project_id": "fir-first-cb812",
     "storage_bucket": "fir-first-cb812.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "643701196923-h9dggme4nfch7l2cqn6to25mgq5uvoj1.apps.googleusercontent.com",
+          "client_id": "643701196923-lc4g2gks3b7t8kj2948r0bdo169b2k2b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.myapplication",
-            "certificate_hash": "a1d7063f0dcdd817eb29528a409e9906542d6e7e"
+            "certificate_hash": "39d33d5c1425a0858bb85eee764b0670dd81699b"
           }
         },
         {

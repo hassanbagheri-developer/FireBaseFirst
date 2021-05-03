@@ -7,4 +7,33 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hassan">#2B3C8E</color>
+
+
+    <color name="colorGreen">#4abdac</color>
+    <color name="colorDarkGreen">#35977C</color>
+    <color name="colorOrange">#fc4a1a</color>
+    <color name="colorRed">#e8351f</color>
+    <color name="colorDarkRed">#851C00</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorYellow">#f7b733</color>
+    <color name="colorGray900">#515254</color>
+    <color name="colorGray700">#858585</color>
+    <color name="colorGray100">#dfdce3</color>
+    <color name="colorTransparent">#74858585</color>
+    <color name="colorTextGreen">#4CAF50</color>
+
+    <color name="colorPrimary">@color/colorPrimaryDark</color>
+    <color name="colorPrimaryDark">#06143C</color>
+    <color name="colorAccent">@color/colorOrange</color>
+
+    <!--    telgram color-->
+    <color name="telgramcolor">#17212B</color>
+    <color name="telgramcolortext1">#65717C</color>
+    <color name="telgramcolortext2">#557599</color>
+    <color name="telgramcolortext3">#5DB2F2</color>
+
+
 </resources>
