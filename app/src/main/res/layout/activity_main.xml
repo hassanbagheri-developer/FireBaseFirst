@@ -216,8 +216,8 @@
 
     <Button
         android:id="@+id/btn_upload"
-        android:layout_width="87dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -234,8 +234,8 @@
 
     <Button
         android:id="@+id/btn_notif"
-        android:layout_width="87dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"

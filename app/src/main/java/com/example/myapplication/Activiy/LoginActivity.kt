@@ -82,6 +82,7 @@ class LoginActivity : AppCompatActivity() {
                 val uid = firebaseAuth.currentUser.uid
                 handlerlogin(uid)
                 startActivity<MainActivity>()
+                finish()
             } else
                 toast(it.exception?.message.toString())
         }
