@@ -1,3 +1,3 @@
 package com.example.myapplication.Data
 
-data class Note(val titel: String, val desc: String, val date: String)
+data class Note(var date: String = "", var titel: String = "", var desc: String = "")

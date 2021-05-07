@@ -42,10 +42,11 @@ class MainActivity : AppCompatActivity() {
     private fun initReclerView() {
         recyclerview.setHasFixedSize(true)
         recyclerview.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true)
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)
 
     }
 
+    //region select data az fire base
     fun getData(){
         notes.clear()
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener{
@@ -58,10 +59,10 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 Log.e("hassan","test")
                 Log.e("hassan","$snapshot")
-                for (DataSnapshot recipeSnapshot: snapshot. ) {
-                    val note = dataSnapshot1.getValue(Note::class.java)
-                    Log.e("hassan","-----------------")
-                    Log.e("hassan","$note")
+                val children = snapshot.children
+                children.forEach() {
+
+                    val note = it.getValue(Note::class.java)
                     notes.add(note!!)
                     recyclerview.adapter=RecyclerAddNoteAdapter(notes)
                 }
@@ -71,6 +72,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    //endregion
+    
 
     fun islogin() {
         sharedPreferences =
