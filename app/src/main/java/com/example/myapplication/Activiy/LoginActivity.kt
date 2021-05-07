@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     companion object {
-        private val IS_LOGIN_KEY = "is_login_key"
-        private val UID_KEY = "uid_key"
+         val IS_LOGIN_KEY = "is_login_key"
+         val UID_KEY = "uid_key"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

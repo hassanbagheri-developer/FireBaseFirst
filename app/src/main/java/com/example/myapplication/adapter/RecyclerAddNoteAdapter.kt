@@ -9,8 +9,8 @@ import com.example.myapplication.R
 import kotlinx.android.synthetic.main.item_note_recyclerview.view.*
 
 
-class RecyclerNoteAdapter (private val data : List<Note>):
-    RecyclerView.Adapter<RecyclerNoteAdapter.ShopViewHolder>(){
+class RecyclerAddNoteAdapter (private val data : List<Note>):
+    RecyclerView.Adapter<RecyclerAddNoteAdapter.ShopViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ShopViewHolder(
