@@ -1,11 +1,14 @@
 package com.example.myapplication.Activiy
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.Data.Helper
 import com.example.myapplication.Data.Note
 import com.example.myapplication.R
 import com.example.myapplication.adapter.RecyclerAddNoteAdapter
@@ -15,7 +18,7 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,Helper{
 
     private lateinit var databaseReference: DatabaseReference
     private lateinit var Uid: String
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
                     val note = it.getValue(Note::class.java)
                     notes.add(note!!)
-                    recyclerview.adapter=RecyclerAddNoteAdapter(notes)
+                    recyclerview.adapter=RecyclerAddNoteAdapter(notes,this@MainActivity,this@MainActivity)
                 }
             }
 
@@ -83,6 +86,30 @@ class MainActivity : AppCompatActivity() {
             finish()
         } else {
             Uid = sharedPreferences.getString(LoginActivity.UID_KEY, "").toString()
+        }
+    }
+
+    override fun DeleteNote(note: Note) {
+
+    }
+
+    override fun EditNote(note: Note) {
+
+        databaseReference.child(note.id).setValue(note).addOnCompleteListener {
+
+            if (it.isSuccessful){
+
+                val view = LayoutInflater.from(this).inflate(R.layout.dialog_message_edit, null)
+
+                val dialog = AlertDialog.Builder(this, R.color.colorTransparent)
+                    .setView(view)
+
+                dialog.show()
+
+                getData()
+            }else{
+                toast(it.exception?.message.toString())
+            }
         }
     }
 

@@ -1,44 +1,112 @@
 package com.example.myapplication.adapter
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Data.Helper
 import com.example.myapplication.Data.Note
 import com.example.myapplication.R
+import kotlinx.android.synthetic.main.dialog_edit_note.view.*
 import kotlinx.android.synthetic.main.item_note_recyclerview.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
-class RecyclerAddNoteAdapter (private val data : List<Note>):
-    RecyclerView.Adapter<RecyclerAddNoteAdapter.ShopViewHolder>(){
+class RecyclerAddNoteAdapter(
+    private val data: List<Note>,
+    val context: Context,
+    val helper: Helper
+) :
+    RecyclerView.Adapter<RecyclerAddNoteAdapter.noteViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ShopViewHolder(
+        noteViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_note_recyclerview,
+                .inflate(
+                    R.layout.item_note_recyclerview,
                     parent,
-                    false)
+                    false
+                )
         )
 
-    override fun onBindViewHolder(holder: ShopViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: noteViewHolder, position: Int) {
         holder.setData(data[position])
     }
 
     override fun getItemCount() = data.size
 
 
-    inner class ShopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class noteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val date = itemView.txt_itemdate
         private val desc = itemView.txt_itemdesc
         private val title = itemView.txt_itemtitle
 
-        fun setData(data : Note){
+        private val deletnote = itemView.img_delete
+        private val editnote = itemView.img_edit
+
+
+        fun setData(data: Note) {
 
             date.text = data.date
             desc.text = data.desc
             title.text = data.titel
 
+            deletnote.setOnClickListener {
+
+            }
+
+            editnote.setOnClickListener {
+
+                showDialogEdit(data)
+            }
+
         }
+
     }
+
+    @SuppressLint("SimpleDateFormat", "WeekBasedYear")
+    private fun showDialogEdit(note: Note) {
+
+        val view = LayoutInflater.from(context).inflate(R.layout.dialog_edit_note, null)
+
+        val dialog = AlertDialog.Builder(context, R.color.colorTransparent)
+            .setView(view)
+
+            dialog.show()
+
+        val edittitle = view.edt_dialog_noteTitle
+        val editdesc = view.edt_dialog_noteDesc
+        val txtshowdate = view.txt_dialog_noteDate
+        val editconfirm = view.btn_editconfirm
+
+
+        edittitle.setText(note.titel)
+        editdesc.setText(note.desc)
+        txtshowdate.setText(note.date)
+
+        editconfirm.setOnClickListener {
+
+            val simpleDateFormat = SimpleDateFormat("dd-MM-YYYY  HH:MM")
+            val calndar = Calendar.getInstance()
+
+            val noteTitle = edittitle.text.toString()
+            val noteDes = editdesc.text.toString()
+            val noteId = note.
+            val notedate = simpleDateFormat.format(calndar.time)
+
+            val note = Note(notedate, noteTitle, noteDes, noteId)
+            helper.EditNote(note)
+
+
+
+        }
+
+    }
+
 }
