@@ -11,6 +11,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.Activiy.Storage.MainUploadActivity
+import com.example.myapplication.Activiy.Storage.UploadImageActivity
 import com.example.myapplication.Data.Helper
 import com.example.myapplication.Data.Note
 import com.example.myapplication.R
@@ -40,6 +42,10 @@ class MainActivity : AppCompatActivity(), Helper {
 
         fab_addnote.setOnClickListener {
             startActivity<AddNoteActivity>()
+        }
+
+        btn_upload.setOnClickListener {
+            startActivity<MainUploadActivity>()
         }
 
 

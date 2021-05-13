@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FireBaseFirst">
-        <activity android:name=".Activiy.Storage.UploadImageActivity"></activity>
+        <activity android:name=".Activiy.Storage.UploadImageActivity"/>
         <activity android:name=".Activiy.Storage.MainUploadActivity" />
         <activity android:name=".Activiy.AddNoteActivity" />
         <activity android:name=".Activiy.Phone.VerifyPhoeAuth" />

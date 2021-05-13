@@ -9,15 +9,9 @@
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="349dp"
-        android:layout_height="501dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="571dp"
         android:background="@color/colorbackground"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,92 +22,66 @@
         android:id="@+id/img_bigimage"
         android:layout_width="225dp"
         android:layout_height="224dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline122"
-        app:layout_constraintEnd_toStartOf="@+id/guideline127"
-        app:layout_constraintStart_toStartOf="@+id/guideline128"
-        app:layout_constraintTop_toTopOf="@+id/guideline115"
-        app:srcCompat="@drawable/ic_cloud_upload_black_24dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cloud_upload_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/txt_showhelp"
         android:layout_width="324dp"
         android:layout_height="59dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:text="برای انتخاب عکس بر روی گزینه زیر کلیک کنید."
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline123"
-        app:layout_constraintEnd_toStartOf="@+id/guideline121"
-        app:layout_constraintStart_toStartOf="@+id/guideline120"
-        app:layout_constraintTop_toTopOf="@+id/guideline122" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_bigimage" />
 
     <Button
         android:id="@+id/btn_choose"
         android:layout_width="307dp"
         android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/circle_nocolor"
         android:text="انتخاب عکس"
-        app:layout_constraintBottom_toTopOf="@+id/guideline126"
-        app:layout_constraintEnd_toStartOf="@+id/guideline121"
-        app:layout_constraintStart_toStartOf="@+id/guideline120"
-        app:layout_constraintTop_toBottomOf="@+id/img_help" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline126" />
 
     <TextView
         android:id="@+id/txt_shownameimage"
         android:layout_width="321dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="نام فایل:"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/guideline124"
-        app:layout_constraintEnd_toStartOf="@+id/guideline121"
-        app:layout_constraintStart_toStartOf="@+id/guideline120"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_showhelp" />
 
     <EditText
         android:id="@+id/edt_imgTitle"
-        android:layout_width="325dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
         android:ems="10"
+        android:gravity="center"
+        android:hint="aaa"
         android:inputType="textPersonName"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/guideline125"
-        app:layout_constraintEnd_toStartOf="@+id/guideline121"
-        app:layout_constraintStart_toStartOf="@+id/guideline120"
-        app:layout_constraintTop_toTopOf="@+id/guideline124" />
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_choose"
+        app:layout_constraintEnd_toEndOf="@+id/img_help"
+        app:layout_constraintStart_toStartOf="@+id/img_help"
+        app:layout_constraintTop_toBottomOf="@+id/img_help" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline115"
@@ -155,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="481dp" />
+        app:layout_constraintGuide_begin="563dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline130"
@@ -190,7 +158,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="193dp" />
+        app:layout_constraintGuide_begin="205dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline128"
@@ -217,17 +185,11 @@
         android:id="@+id/img_help"
         android:layout_width="127dp"
         android:layout_height="96dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:rotationY="180"
-        app:layout_constraintBottom_toTopOf="@+id/guideline125"
-        app:layout_constraintEnd_toStartOf="@+id/guideline132"
-        app:layout_constraintStart_toStartOf="@+id/guideline131"
-        app:layout_constraintTop_toTopOf="@+id/guideline130"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/txt_showhelp"
+        app:layout_constraintStart_toStartOf="@+id/txt_showhelp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_shownameimage"
         app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp"
         tools:ignore="VectorDrawableCompat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
