@@ -55,7 +55,7 @@ class AddNoteActivity : AppCompatActivity() {
     private fun addNote(title: String, description: String, date: String) {
         val key = databaseReference.push().key.toString()
 
-        val note = Note(title, description, date)
+        val note = Note(date ,title, description, key)
         databaseReference.child(key).setValue(note).addOnCompleteListener {
             if (it.isSuccessful) {
                 startActivity<MainActivity>()

@@ -1,8 +1,11 @@
 package com.example.myapplication.Activiy
 
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,7 +21,7 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.util.*
 
-class MainActivity : AppCompatActivity() ,Helper{
+class MainActivity : AppCompatActivity(), Helper {
 
     private lateinit var databaseReference: DatabaseReference
     private lateinit var Uid: String
@@ -50,24 +53,25 @@ class MainActivity : AppCompatActivity() ,Helper{
     }
 
     //region select data az fire base
-    fun getData(){
+    fun getData() {
         notes.clear()
-        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener{
+        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
-                toast(error.message.toString())
-                Log.e("hassan",error.message)
+                toast(error.message)
+                Log.e("hassan", error.message)
 
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                Log.e("hassan","test")
-                Log.e("hassan","$snapshot")
+                Log.e("hassan11", "test")
+                Log.e("hassan", "$snapshot")
                 val children = snapshot.children
                 children.forEach() {
 
                     val note = it.getValue(Note::class.java)
                     notes.add(note!!)
-                    recyclerview.adapter=RecyclerAddNoteAdapter(notes,this@MainActivity,this@MainActivity)
+                    recyclerview.adapter =
+                        RecyclerAddNoteAdapter(notes, this@MainActivity, this@MainActivity)
                 }
             }
 
@@ -76,7 +80,7 @@ class MainActivity : AppCompatActivity() ,Helper{
 
     }
     //endregion
-    
+
 
     fun islogin() {
         sharedPreferences =
@@ -91,24 +95,44 @@ class MainActivity : AppCompatActivity() ,Helper{
 
     override fun DeleteNote(note: Note) {
 
+        databaseReference.child(note.id).removeValue().addOnCompleteListener {
+
+            if (it.isSuccessful) {
+
+
+                val dialog = Dialog(this@MainActivity)
+                dialog.window
+                    ?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+                dialog.setContentView(R.layout.dialog_message_delete)
+                dialog.show()
+
+                getData()
+
+            } else {
+                Log.e("hasan", it.exception?.message.toString())
+            }
+        }
     }
+
 
     override fun EditNote(note: Note) {
 
         databaseReference.child(note.id).setValue(note).addOnCompleteListener {
 
-            if (it.isSuccessful){
+            if (it.isSuccessful) {
 
-                val view = LayoutInflater.from(this).inflate(R.layout.dialog_message_edit, null)
 
-                val dialog = AlertDialog.Builder(this, R.color.colorTransparent)
-                    .setView(view)
+                val dialog = Dialog(this@MainActivity)
+                dialog.window
+                    ?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
+                dialog.setContentView(R.layout.dialog_message_edit)
                 dialog.show()
 
                 getData()
-            }else{
-                toast(it.exception?.message.toString())
+            } else {
+                Log.e("hasan", it.exception?.message.toString())
             }
         }
     }

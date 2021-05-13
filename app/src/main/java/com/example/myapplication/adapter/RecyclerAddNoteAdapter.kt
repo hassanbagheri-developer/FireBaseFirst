@@ -3,6 +3,7 @@ package com.example.myapplication.adapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +60,8 @@ class RecyclerAddNoteAdapter(
 
             deletnote.setOnClickListener {
 
+                showDialogDelete(data)
+
             }
 
             editnote.setOnClickListener {
@@ -70,6 +73,27 @@ class RecyclerAddNoteAdapter(
 
     }
 
+    private fun showDialogDelete(data: Note) {
+        val alertdialog = AlertDialog.Builder(
+            ContextThemeWrapper(
+                context,
+                R.style.AlertDialogCustom
+            )
+        )
+
+        alertdialog.setTitle("حذف یادداشت" + data.titel)
+        alertdialog.setMessage("آیا مایل به حذف این یادداشت می باشید ؟")
+        alertdialog.setCancelable(true)
+        alertdialog.setPositiveButton("آره") {
+                dialog, which -> helper.DeleteNote(data) }
+        alertdialog.setNegativeButton(
+            "نه!"
+        ) { dialog, which -> dialog.cancel() }
+
+        val alert = alertdialog.create()
+        alert.show()
+    }
+
     @SuppressLint("SimpleDateFormat", "WeekBasedYear")
     private fun showDialogEdit(note: Note) {
 
@@ -78,7 +102,7 @@ class RecyclerAddNoteAdapter(
         val dialog = AlertDialog.Builder(context, R.color.colorTransparent)
             .setView(view)
 
-            dialog.show()
+        dialog.show()
 
         val edittitle = view.edt_dialog_noteTitle
         val editdesc = view.edt_dialog_noteDesc
@@ -97,12 +121,11 @@ class RecyclerAddNoteAdapter(
 
             val noteTitle = edittitle.text.toString()
             val noteDes = editdesc.text.toString()
-            val noteId = note.
+            val noteId = note.id
             val notedate = simpleDateFormat.format(calndar.time)
 
             val note = Note(notedate, noteTitle, noteDes, noteId)
             helper.EditNote(note)
-
 
 
         }
