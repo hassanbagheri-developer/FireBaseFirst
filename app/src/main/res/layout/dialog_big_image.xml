@@ -15,14 +15,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:gravity="right"
-        app:srcCompat="@drawable/ic_close_black_24dp" />
+        app:srcCompat="@drawable/ic_close_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
 
     <ImageView
         android:id="@+id/img_big_image"
         android:layout_width="400dp"
         android:layout_height="300dp"
-        app:srcCompat="@drawable/ic_cloud_upload_black_24dp" />
+        app:srcCompat="@drawable/ic_cloud_upload_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </LinearLayout>

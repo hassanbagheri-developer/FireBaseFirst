@@ -26,7 +26,7 @@ import java.util.*
 class MainActivity : AppCompatActivity(), Helper {
 
     private lateinit var databaseReference: DatabaseReference
-    private lateinit var Uid: String
+    private  var Uid: String = ""
     private lateinit var sharedPreferences: SharedPreferences
     private val notes = ArrayList<Note>()
 

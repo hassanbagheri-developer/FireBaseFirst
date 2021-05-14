@@ -1,6 +1,8 @@
 package com.example.myapplication.Activiy
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,10 +28,14 @@ class MainSignUpActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_sign_up)
+        sharedPreferences = getSharedPreferences(LoginActivity.IS_LOGIN_KEY, Context.MODE_PRIVATE)
+
 
         configGoogle()
 
@@ -75,6 +81,10 @@ class MainSignUpActivity : AppCompatActivity() {
                     databaseReference.child(Uid).setValue(users).addOnCompleteListener {
                         if (task.isSuccessful) {
                             toast("همگام سازی با موفعیت انجام شد")
+                            val uid = firebaseAuth.currentUser.uid
+                            val editor = sharedPreferences.edit()
+                            editor.putString(LoginActivity.UID_KEY,uid)
+                            editor.commit()
                             startActivity<MainActivity>()
                             finish()
 
